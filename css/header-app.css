@@ -2327,7 +2327,7 @@
 
 
 
-.pro-wrap{background:#fff;height:49px;position:relative;width:550px;margin:20px auto;}
+.pro-wrap{background:#fff;height:49px;position:relative;width:550px;margin:0 auto;}
 .pro-wrap li{float:left;list-style:none;text-align:center;font-size:14px;}
 .pro-wrap li .v a{
   width:128px;
@@ -2353,7 +2353,7 @@
   background: #fff;
   vertical-align:middle;
   position:absolute;
-  top:55px;
+  top:0px;
   left:-100px;
   text-align:left;
   display:none;
@@ -2393,7 +2393,7 @@
 
  .lights-wrap.pro-wrap{
   background: none;
-  height: 600px;
+  height: 500px;
  }
  
  .lights-wrap .kind_menu{
