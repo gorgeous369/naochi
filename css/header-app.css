@@ -794,11 +794,11 @@
 }
 
 .product-card {
-    float: left;
-  width: 33%;
-  display: block;
-  cursor: pointer;
-  border-radius: 4px
+	float: left;
+	width: 400px;
+	display: block;
+	cursor: pointer;
+	border-radius: 4px
 }
 
 @media(min-width: 768px) {
@@ -2386,9 +2386,9 @@
  }
 
  .lights-wrap{
-  background-color: black;
-  display: none;
-  width: 100%;
+	background-color: black;
+	display: none;
+	width: 100%;
 }
 
  .lights-wrap.pro-wrap{
