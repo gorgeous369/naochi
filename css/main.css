@@ -14282,9 +14282,9 @@ a.tab__title span::after {
 }
 
 .products-listing__container {
-  background-color: #000;
-  border-top: 0px solid #f0f0f0;
-  padding: 0 0 3rem
+	background-color: #000;
+	border-top: 0px solid #f0f0f0;
+	padding: 0 0 0
 }
 
 @media (max-width: 991px) {
@@ -14630,7 +14630,7 @@ a.tab__title span::after {
 }
 
 .product-card__details {
-  max-width: 400px;
+  /* max-width: 400px; */
   padding-bottom: 16px
 }
 
@@ -14871,7 +14871,7 @@ a.tab__title span::after {
 }
 
 .product-card .img-fluid {
-  max-width: 130px;
+  max-width: 210px;
   width: 100%
 }
 
