@@ -191,7 +191,7 @@ main {
   top: 0;
   left: 10px;
   width: 95%;
-  padding-top: 62.5%;
+  padding-top: 80%;
 }
 .gallery01 .swiper-button-prev, .gallery01 .swiper-button-next {
   position: absolute;
@@ -237,7 +237,7 @@ main {
   overflow: hidden;
 }
 .gallery01 .slide-media {
-  padding-top: 70%;
+  padding-top: 100%;
   border-radius: 4px;
 }
 .gallery01 .slide-media img {
