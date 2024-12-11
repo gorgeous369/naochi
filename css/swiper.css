@@ -122,8 +122,8 @@ main {
 .swiper-button-prev, .swiper-button-next {
   display: grid;
   place-content: center;
-  width: 3.4rem;
-  height: 3.4rem;
+  width: 3rem;
+  height: 3rem;
   cursor: pointer;
   -webkit-transition: var(--transition);
   transition: var(--transition);
@@ -191,7 +191,7 @@ main {
   top: 0;
   left: 10px;
   width: 95%;
-  padding-top: 80%;
+  padding-top: 100%;
 }
 .gallery01 .swiper-button-prev, .gallery01 .swiper-button-next {
   position: absolute;
