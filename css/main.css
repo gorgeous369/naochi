@@ -1,3 +1,7 @@
+li::marker {
+    color: black;
+}
+
 .swiper-container {
   margin-left: auto;
   margin-right: auto;
@@ -12647,7 +12651,7 @@ a.btn-block {
 }
 
 .btn-dealer {
-  font-size: 1.25rem
+  /* font-size: 1.25rem */
 }
 
 .btn-input-size {
@@ -14982,7 +14986,7 @@ a.tab__title span::after {
 
 .variants__legend {
   padding-bottom: 13px;
-  font-size: 0.875rem
+  /* font-size: 0.875rem */
 }
 
 @media (min-width: 992px) {
@@ -31556,7 +31560,7 @@ a.product__explore-link.is-open {
 }
 
 .product__title {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   margin-bottom: 0.5rem
 }
 

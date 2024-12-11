@@ -2063,7 +2063,7 @@
   background-image: url("../images/logo.png");
   display: flex;
   height: 45px;
-  width: 10rem;
+  /* width: 10rem; */
   background-repeat: no-repeat;
   background-position: center center; /* 确保图像居中 */
   filter: invert(100%) grayscale(100%);
@@ -2415,7 +2415,7 @@
   padding-top: 0!important; 
  }
  /* 效果CSS开始 */
-.mod18{width:677px;position:relative;margin:0 auto;}
+.mod18{width:auto;position:relative;margin:0 auto;}
 .mod18 .btn{position:absolute;cursor:pointer;z-index:99;font-size:50px;font-weight:bold;}
 .mod18 .prev{left:10px;background:url(../images/product/prev.svg) no-repeat;}
 .mod18 #prevTop,.mod18 #nextTop{
@@ -2448,16 +2448,23 @@
 }
 .mod18 li{float:left;}
 .mod18 .cf li{position:relative;color:#fff;}
-.mod18 .cf a{display:block;width:526px;height:377px;position:absolute;color:#fff;}
+.mod18 .cf a{display:block;width:420px;height:420px;position:absolute;color:#fff;}
 .mod18 .cf li span{display:block;width:486px;position:absolute;left:75px;bottom:0;padding:10px 20px;line-height:22px;text-align:left;background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorstr = "#60000000",endColorstr = "#60000000");}
 .mod18 .picBox{width:543px; height:360px; padding-left:75px; padding-right:76px;position:relative;overflow:hidden;padding-top:0px;margin-left: 40px;}
 .mod18 .picBox ul{height:377px;position:absolute; left:0;}
-.mod18 .picBox li{padding-left:75px; padding-right:1px; width:526px;height:377px;}
+.mod18 .picBox li{padding-left:0px; padding-right:0px; width:526px;height:377px;}
 .mod18 .picBox li img{
-  width: 60%;
+  width: 100%;
 }
 
-.mod18 .listBox{width:642px;height:127px;margin:0 auto;position:relative; padding-top:-15px;overflow:hidden;}
+.mod18 .listBox{
+	width:420px;
+	height:127px;
+	margin:0 auto;
+	position:relative;
+	padding-top:-15px;
+	overflow:hidden;
+}
 .mod18 .listBox ul{height:127px;position:absolute;padding:0;margin-left: 10px;}
 .mod18 .listBox li{width:127px;height:127px;cursor:pointer;position:relative; padding:5px 0 0 0;opacity: 1;}
 .mod18 .listBox li i{display:none;}
