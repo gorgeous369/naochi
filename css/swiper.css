@@ -201,10 +201,10 @@ main {
   margin: auto;
 }
 .gallery01 .swiper-button-prev {
-  right: calc(100% + 3.2rem);
+  /* right: calc(100% + 3.2rem); */
 }
 .gallery01 .swiper-button-next {
-  left: calc(100% + 3.2rem);
+  /* left: calc(100% + 3.2rem); */
 }
 .gallery01 .swiper-scrollbar {
   position: relative;
@@ -237,7 +237,7 @@ main {
   overflow: hidden;
 }
 .gallery01 .slide-media {
-  padding-top: 62.5%;
+  padding-top: 70%;
   border-radius: 4px;
 }
 .gallery01 .slide-media img {

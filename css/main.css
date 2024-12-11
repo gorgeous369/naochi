@@ -3236,7 +3236,8 @@ html {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -20px;
-  margin-left: -20px
+  margin-left: -20px;
+  height: 600px;
 }
 
 .no-gutters {
@@ -31945,14 +31946,14 @@ a.product__explore-link.is-open {
 }
 
 .product-images .swiper-wrapper img {
-  max-height: 250px;
+  max-height: 700px;
   margin: 0 auto;
   display: block
 }
 
 @media (min-width: 992px) {
   .product-images .swiper-wrapper img {
-      max-height:400px
+      max-height:700px
   }
 }
 
