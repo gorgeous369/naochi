@@ -3176,6 +3176,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 html {
+  background-color: #fff;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -ms-overflow-style: scrollbar
@@ -6422,9 +6423,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
+  color: black;
   text-align: left;
-  background-color: #000
+  background-color: white
 }
 
 [tabindex="-1"]:focus {
@@ -6512,7 +6513,7 @@ sup {
 }
 
 a {
-  color: #fff;
+  color: black;
   text-decoration: underline;
   background-color: transparent;
   -webkit-text-decoration-skip: objects
@@ -7636,14 +7637,15 @@ a:focus,a:hover {
 }
 
 .colors--inverse a {
-  color: white;
+  color: black;
   -webkit-transition: opacity .25s ease,color .25s ease;
   transition: opacity .25s ease,color .25s ease
 }
 
 @media (min-width: 768px) {
   .colors--inverse a:focus,.colors--inverse a:hover {
-      opacity:.5
+    /* background-color: #000; */
+    opacity:.6
   }
 }
 
@@ -12396,7 +12398,7 @@ a.btn:not(:disabled):active {
 @media (min-width: 992px) {
   .btn-white:not(:disabled):hover {
       color:#fff;
-      background-color: grey;
+      background-color: #e7e7e7;
       border-color: #000
   }
 }
@@ -12997,11 +12999,11 @@ a.btn-block {
   margin: 0 -5px
 }
 #proWrap a{
-  color: #fff;
+  color: black;
 }
 #proWrap a:hover, #proWrap a.current{
-  background-color: #fff!important;
-  color: #000;
+  background-color: gray!important;
+  color: black;
 }
 @media (min-width: 992px) {
   .filter__buttons {
@@ -13032,7 +13034,7 @@ a.btn-block {
   -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
-  border: 1px solid #f0f0f0;
+  border: 1px solid black;
   border-radius: 4px;
   -webkit-transition: background 0.15s;
   transition: background 0.15s
@@ -14288,7 +14290,7 @@ a.tab__title span::after {
 }
 
 .products-listing__container {
-	background-color: #000;
+	background-color: #fff;
 	border-top: 0px solid #f0f0f0;
 	padding: 0 0 0
 }
@@ -14974,7 +14976,7 @@ a.tab__title span::after {
   margin: 0;
   position: relative;
   z-index: 1;
-  background-color: black
+  background-color: rgb(236, 236, 236)
 }
 
 .variants__discontinued {
@@ -15089,7 +15091,7 @@ a.variants__information {
   position: relative;
   -webkit-transition: all .5s;
   transition: all .5s;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid black;
   padding: 10px 20px
 }
 
@@ -15176,7 +15178,7 @@ a.variants__information .variants__price {
 }
 
 input:checked+a.variants__information {
-  background: gray
+  background: rgb(184, 184, 184)
 }
 
 input:checked+a.variants__information .variants__text::before {
@@ -15209,7 +15211,7 @@ input:checked+a.variants__information .variants__text::after {
 }
 
 .variants__option:first-of-type a.variants__information {
-  border-top: 1px solid #ececec
+  border-top: 1px solid black
 }
 
 .variants__availability {
@@ -31549,7 +31551,7 @@ a.product__explore-link.is-open {
 }
 
 .product__main {
-  background-color: black;
+  background-color: white;
   padding-top: 0.25rem;
   padding-bottom: 0;
   display: block
@@ -31683,7 +31685,7 @@ a.product__explore-link.is-open {
 }
 
 .product__buy-area {
-  background-color: black;
+  background-color: white;
   padding-top: 24px;
   padding-bottom: 24px;
   border-top: 1px solid #ececec;
