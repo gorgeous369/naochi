@@ -14269,12 +14269,12 @@ a.tab__title span::after {
 }
 
 .gallery-thumbs .arrow.prev:after {
-  background: url("../images/product/prev.svg") no-repeat center center;
+  background: url("./images/prev.svg") no-repeat center center;
   left: 0.5rem
 }
 
 .gallery-thumbs .arrow.next:after {
-  background: url("../images/product/next.svg") no-repeat center center;
+  background: url("./images/next.svg") no-repeat center center;
   right: 0.5rem
 }
 
