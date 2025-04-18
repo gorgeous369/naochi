@@ -144,17 +144,14 @@
 					<nav class="filter__buttons parent js-filter-buttons active">
 						<div class="filter__buttons--inner" id="proWrap">
 								<a href="" class="filter-button js-filter-category current active">
-									会社概要
+									製品一覧
 								</a>
 								<a href="" class="filter-button js-filter-category">
-									製品一覧
+									会社概要
 								</a>
 								<a href="" class="filter-button js-filter-category">
 									お問い合わせ
 								</a>
-								<!-- <a href="" class="filter-button js-filter-category" >
-									男性脚部模型
-								</a> -->
 						</div>
 					</nav>
 				</div>
@@ -162,14 +159,6 @@
 					<div class="products-listing__container js-products-listing__container">
 						<div class="container-fluid container-fluid--wide products-listing js-products-listing">
 							<div class="pro-wrap lights-wrap" style="display: contents;">
-								<div style="text-align: center; margin: 2rem 0;">
-									<img src="images/aisatsu.jpg" alt="代表挨拶" style="max-width: 100%; height: auto; border-radius: 8px;">
-								  </div>
-								  <div style="text-align: center; margin: 2rem 0;">
-									<img src="images/gaiyo.jpg" alt="会社概要" style="max-width: 100%; height: auto; border-radius: 8px;">
-								  </div>
-							</div>
-							<div class="lights-wrap" style="display: none;">
 								<article class="product-card js-product-card">
 									<span class="js-analytics-data">
 									</span>
@@ -236,78 +225,36 @@
 								</article>
 							</div>
 							<div class="lights-wrap" style="display: none;">
-								<article class="product-card js-product-card  >
-								<span class="js-analytics-data">
-								</span>		
-									<a tabindex="-1" href="product.html" class="absolute-fill"></a>
-								<div class="product-card__inner ">
-									<img src="./images/pro-pic8.jpg" class="img-fluid lazyloaded" alt="">
-									<div class="product-card__details">
-										<h3 class="product-card__title">
-											硅胶女脚 TG3302
-										</h3>
-											<div class="product-card__description description-two-rows">详细介绍：例：至尊版+嵌入式指甲</div>
-									</div>
-							
-										<div class="product-card__price-details">
-										</div>
-										<div class="product-card__links">
-												<a tabindex="-1" href="product.html" class="product-card__link">购买</a>
-																<a tabindex="-1" href="product.html" class="product-card__link product-card__link--primary">
-													细节
-												</a>
-														</div>
+								<div style="text-align: center; margin: 2rem 0;">
+									<img src="images/aisatsu.jpg" alt="代表挨拶" style="max-width: 100%; height: auto; border-radius: 8px;">
 								</div>
-							</article>
+								<div style="text-align: center; margin: 2rem 0;">
+									<img src="images/gaiyo.jpg" alt="会社概要" style="max-width: 100%; height: auto; border-radius: 8px;">
+								</div>
 							</div>
 							<div class="lights-wrap" style="display: none;">
-								<article class="product-card js-product-card  ">
-									<span class="js-analytics-data">
-									</span>
-									<a tabindex="-1" href="product.html" class="absolute-fill"></a>					
-									<div class="product-card__inner ">
-									<img src="./images/pro-pic6.jpg" class="img-fluid lazyloaded" alt="">
-										<div class="product-card__details">
-											<h3 class="product-card__title">
-												硅胶女脚 TG3301
-											</h3>
-											<div class="product-card__description description-two-rows">详细介绍：例：至尊版+嵌入式指甲</div>
-										</div>
-											<div class="product-card__price-details">
-											</div>
-											<div class="product-card__links">
-													<a tabindex="-1" href="product.html" class="product-card__link">购买</a>
-																	<a tabindex="-1" href="product.html" class="product-card__link product-card__link--primary">
-														细节
-													</a>
-															</div>
-									</div>
-								</article>
-								<article class="product-card js-product-card  ">
-								<span class="js-analytics-data">
-								</span>
-									<a tabindex="-1" href="product.html" class="absolute-fill"></a>
-								<div class="product-card__inner ">
-												<img src="./images/pro-pic2.jpg" class="img-fluid lazyloaded" alt="">
-									<div class="product-card__details">
-							
-										<h3 class="product-card__title">
-											硅胶女脚 TG3607
-										</h3>
-							
-											<div class="product-card__description description-two-rows">详细介绍：例：至尊版+嵌入式指甲</div>
-									</div>
-							
-										<div class="product-card__price-details">
-										</div>
-										<div class="product-card__links">
-												<a tabindex="-1" href="product.html" class="product-card__link">购买</a>
-																<a tabindex="-1" href="product.html" class="product-card__link product-card__link--primary">
-													细节
-												</a>
-														</div>
-								</div>
-								</article>
+								<form id="contact-form">
+									<input name="name" placeholder="名前" required>
+									<input name="email" placeholder="メールアドレス" required>
+									<textarea name="message" placeholder="内容" required></textarea>
+									<button type="submit">確認</button>
+								  </form>
+								  
+								  <script>
+								  document.getElementById("contact-form").addEventListener("submit", async function (e) {
+									e.preventDefault();
+									const formData = new FormData(e.target);
+									const data = Object.fromEntries(formData.entries());
+								  
+									await fetch("https://qsi4np79th.execute-api.ap-northeast-1.amazonaws.com/prod", {
+									  method: "POST",
+									  headers: { "Content-Type": "application/json" },
+									  body: JSON.stringify(data)
+									});
+									
+									alert("送信完了。ありがとうございます。");
+								  });
+								  </script>
 							</div>
 						</div>
 					</div>
