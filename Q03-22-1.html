@@ -206,88 +206,102 @@
 										<a class="btn btn-block btn-dealer btn-white btn--not-bold js--btn-buy-information" href="https://www.amazon.co.jp/s?k=脚模&__mk_ja_JP=カタカナ&crid=12KQCZA94L70G&sprefix=脚模%2Caps%2C166&ref=nb_sb_noss_1">购买链接</a>
 										<p class="product__buy-text"></p>
 									</div>
+									<div>
+										<style>
+											.comment-box {
+											  width: 100%;
+											  max-width: 600px;
+											  margin: 0px auto 0;
+											  font-family: 'Segoe UI', sans-serif;
+											  background: #f9f9f9;
+											  border-radius: 16px;
+											  padding: 15px;
+											  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+											  box-sizing: border-box;
+											}
+										  
+											.comment-box h3 {
+											  color: #2a5dca;
+											  font-size: 20px;
+											  margin-bottom: 12px;
+											}
+										  
+											textarea#message {
+											  width: 100%;
+											  padding: 0px;
+											  border-radius: 8px;
+											  border: 1px solid #ccc;
+											  font-size: 14px;
+											  resize: vertical;
+											  box-sizing: border-box;
+											}
+										  
+											button {
+											  margin-top: 0px;
+											  padding: 5px 15px;
+											  background: #2a5dca;
+											  color: white;
+											  border: none;
+											  border-radius: 8px;
+											  cursor: pointer;
+											  font-size: 14px;
+											  transition: background 0.2s;
+											}
+										  
+											button:hover {
+											  background: #1e46a1;
+											}
+										  
+											.sort-controls {
+											  margin: 0 0 0;
+											  text-align: right;
+											}
+										  
+											hr {
+											  margin: 30px 0;
+											  border: none;
+											  border-top: 1px solid #ddd;
+											}
+										  
+											ul#comment-list {
+											  list-style: none;
+											  padding-left: 0;
+											}
+										  
+											ul#comment-list li {
+											  background: #ffffff;
+											  padding: 12px 16px;
+											  margin-bottom: 12px;
+											  border-left: 4px solid #2a5dca;
+											  border-radius: 10px;
+											  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+											  transition: transform 0.2s;
+											}
+											ul#comment-list li div:first-child {
+											  font-size: 12px;
+											  color: #888;
+											}
+											ul#comment-list li div:last-child {
+											  font-size: 16px;
+											  color: #333;
+											}
+										</style>
+										<div class="comment-box">
+										<h3>コメント</h3>
+										<textarea id="message" rows="4" placeholder="コメントを入力してください（200文字以内）"></textarea><br>
+										<button onclick="submitComment()">送信</button>
+										<div class="sort-controls">
+											<button onclick="toggleSortOrder()" id="sort-btn" style="display: none;">新しい順</button>
+										</div>
+										
+										<ul id="comment-list"></ul>
+										</div>
+									</div>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div>
-			<style>
-				.comment-box {
-				max-width: 600px;
-				margin: auto;
-				font-family: 'Segoe UI', sans-serif;
-				background: #f9f9f9;
-				border-radius: 12px;
-				padding: 20px;
-				box-shadow: 0 0 10px rgba(0,0,0,0.1);
-				}
-			
-				.comment-box h3 {
-				color: #2a5dca;
-				margin-bottom: 10px;
-				}
-			
-				textarea#message {
-				width: 100%;
-				padding: 12px;
-				border-radius: 8px;
-				border: 1px solid #ccc;
-				font-size: 14px;
-				resize: vertical;
-				}
-			
-				button {
-				margin-top: 10px;
-				padding: 10px 20px;
-				background: #2a5dca;
-				color: white;
-				border: none;
-				border-radius: 8px;
-				cursor: pointer;
-				font-size: 14px;
-				}
-			
-				button:hover {
-				background: #1e46a1;
-				}
-			
-				.sort-controls {
-				margin: 10px 0;
-				text-align: right;
-				}
-			
-				hr {
-				margin: 30px 0;
-				border: none;
-				border-top: 1px solid #ddd;
-				}
-			
-				ul#comment-list {
-				list-style: none;
-				padding-left: 0;
-				}
-			
-				ul#comment-list li {
-				background: #fff;
-				padding: 12px 16px;
-				margin-bottom: 10px;
-				border-left: 4px solid #2a5dca;
-				border-radius: 8px;
-				box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-				}
-			</style>
-			<div class="comment-box">
-			<h3>コメント</h3>
-			<textarea id="message" rows="4" placeholder="コメントを入力してください（200文字以内）"></textarea><br>
-			<button onclick="submitComment()">送信</button>
-			<div class="sort-controls">
-				<button onclick="toggleSortOrder()" id="sort-btn">新しい順</button>
-			</div>
-			
-			<ul id="comment-list"></ul>
 			</div>
 		</div>
 		</main>
@@ -433,11 +447,21 @@
 				const data = await res.json();
 
 				const ul = document.getElementById("comment-list");
-				if (!ul) {
-					console.error("❌ ul#comment-list not found");
+				const sortBtn = document.getElementById("sort-btn");
+
+				if (!ul || !sortBtn) {
+					console.error("❌ comment-list or sort-btn not found");
 					return;
 				}
+
 				ul.innerHTML = "";
+
+				if (data.length === 0) {
+					sortBtn.style.display = "none"; // 👈 没有评论时隐藏按钮
+					return;
+				} else {
+					sortBtn.style.display = "inline-block"; // 👈 有评论时显示按钮
+				}
 
 				data.sort((a, b) => {
 					return newestFirst
@@ -450,7 +474,7 @@
 
 					const timeSpan = document.createElement("div");
 					timeSpan.textContent = new Date(item.created_at).toLocaleString();
-					timeSpan.style.color = "#888"; // 时间颜色
+					timeSpan.style.color = "#888";
 					timeSpan.style.fontSize = "12px";
 
 					const messageDiv = document.createElement("div");
@@ -461,7 +485,7 @@
 					li.style.padding = "0px 16px";
 					li.style.borderRadius = "8px";
 					li.style.borderLeft = "1px solid #2a5dca";
-					li.style.marginBottom = "10px";
+					li.style.marginTop = "10px";
 					li.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
 
 					li.appendChild(timeSpan);
